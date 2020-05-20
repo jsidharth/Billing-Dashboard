@@ -9,14 +9,16 @@ import {
   FaExclamation,
   FaDollarSign,
 } from "react-icons/fa";
+import { BsGraphUp } from "react-icons/bs";
 
 class Dashboard extends Component {
+  totalData = [_.random(6, 30), _.random(1, 5)];
   doughnutData = {
     data: {
       labels: ["Downloaded data", "Uploaded data"],
       datasets: [
         {
-          data: _.times(2, (i) => _.random(90)),
+          data: this.totalData,
           backgroundColor: ["#7adfbb", "#4c8577"],
         },
       ],
@@ -117,9 +119,14 @@ class Dashboard extends Component {
                 <div class="card shadow p-2 bg-white rounded m-1">
                   <div class="card-body">
                     <p className="font-weight-bold">
-                      Current Bill <FaDollarSign />
+                      Total Data <BsGraphUp />
                     </p>
-                    <p className="font-weight-bolder">{_.random(50, 100)} $</p>
+                    <p className="font-weight-bolder">
+                      {this.totalData.reduce((sum, data) => {
+                        return (sum += data);
+                      }, 0)}{" "}
+                      GB
+                    </p>
                   </div>
                 </div>
               </div>
