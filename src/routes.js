@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import MonthlyDetail from "./components/MonthlyDetail";
 import Billing from "./components/Billing";
@@ -14,6 +14,7 @@ const Routes = () => {
       <Route exact path="/data/month/:monthidx" component={MonthlyDetail} />
       <Route exact path="/account" component={Account} />
       <Route exact path="/payment" component={Payment} />
+      <Redirect exact path="/" to="/billing"/>
     </main>
   );
 };
