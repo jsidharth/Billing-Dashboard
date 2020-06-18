@@ -9,8 +9,8 @@ import Payment from "./components/Payment";
 const Routes = () => {
   return (
     <main class="col bg-faded py-3 flex-grow-1">
-      <Route exact path="/" component={Dashboard} />
       <Route exact path="/billing" component={Billing} />
+      <Route exact path="/datausage" component={Dashboard} />
       <Route exact path="/data/month/:monthidx" component={MonthlyDetail} />
       <Route exact path="/account" component={Account} />
       <Route exact path="/payment" component={Payment} />

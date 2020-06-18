@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
-import { FcComboChart } from "react-icons/fc";
+// import { FcComboChart } from "react-icons/fc";
 
 class Navbar extends Component {
   render() {
@@ -10,25 +10,31 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse ">
             <ul className="flex-md-column flex-row navbar-nav w-100 justify-content-between">
               <li className="navbar-brand">
-                <Link to="/" className="text-decoration-none">
+                <Link to="/billing" className="text-decoration-none">
                   <i className="fa fa-bullseye fa-fw"></i>{" "}
                   <span className="font-weight-bold">
-                    {" "}
-                    <FcComboChart /> ISP Billing
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Equinix.svg/1280px-Equinix.svg.png"
+                        width="80"
+                        height="40"
+                        className="d-inline-block align-top"
+                        alt=""
+                        loading="lazy"
+                      />
                   </span>
-                  <hr />
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link pl-0" to="/">
-                  <i className="fa fa-book fa-fw"></i>{" "}
-                  <span className="d-none d-md-inline">Data Usage</span>
-                </Link>
-              </li>
+              <hr/>
               <li className="nav-item">
                 <Link className="nav-link pl-0" to="/billing">
-                  <i className="fa fa-cog fa-fw"></i>{" "}
+                  <i className="fa fa-book fa-fw"></i>{" "}
                   <span className="d-none d-md-inline">Billing</span>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link pl-0" to="/datausage">
+                  <i className="fa fa-cog fa-fw"></i>{" "}
+                  <span className="d-none d-md-inline">Data Usage</span>
                 </Link>
               </li>
               <li className="nav-item">
